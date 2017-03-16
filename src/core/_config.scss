@@ -1,0 +1,195 @@
+@charset "UTF-8";
+//
+// config file
+// -----------------------------------------------------------------------------
+//
+
+
+// 开关设置
+// -----------------------------------------------------------------------------
+$isUseBorderBox: true !default;
+$isSupportOldIE: true !default;
+$isUseAutoprefixer: true !default;
+
+
+// 全局配置
+// -----------------------------------------------------------------------------
+$prefixList: (webkit, moz, ms, o);
+$placeholderColor: #999;
+$nameSpace: '';
+
+
+// font 相关
+// -----------------------------------------------------------------------------
+$baseFontSize: 14px !default;
+$baseLineHeight: 1.15 !default;
+$baseFontFamily: tahoma, Arial, "Hiragino Sans GB", "\u5b8b\u4f53", sans-serif !default;
+$headFontFamily: tahoma, Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif !default;
+$codeFontFamily: courier new, courier, monospace !default;
+$formFontFamily: Tahoma, Helvetica, Arial, sans-serif !default;
+
+
+// grid 相关设置
+// -----------------------------------------------------------------------------
+$gridColumns: 12 !default;
+$gridGutter: 10px !default;
+
+
+// 基础颜色
+// -----------------------------------------------------------------------------
+$black: #000 !default;
+$grayDarker: #333 !default;
+$grayDark: #999 !default;
+$gray: #ccc !default;
+$grayLight: #f5f5f5 !default;
+$white: #fff !default;
+
+$red: #fa5a5a !default;
+$yellow: #f0d264 !default;
+$green: #82c8a0 !default;
+$cyan: #2c96da !default;
+$blue: #1b9451 !default;
+$purple: #cb99c5 !default;
+$pink: #c3325f !default;
+
+$primary: #00caab !default;
+$secondary: $purple !default;
+
+
+// button
+// -----------------------------------------------------------------------------
+$btnPadding: .75em 1.5em !default;
+$btnTransitionTime: .3s !default;
+$btnBorderRadius: 4px !default;
+$btnDefaultSize: 16 / $baseFontSize !default;
+$btnColors: (
+  default: #f5f5f5,
+  primary: $primary,
+  secondary: $secondary,
+  success: $blue,
+  danger: $red,
+  warning: $yellow,
+  info: $cyan
+) !default;
+$btnSize: (
+  tiny: 12 / $baseFontSize,
+  small: 14 / $baseFontSize,
+  large: 18 / $baseFontSize
+) !default;
+
+$btnPaddingList:(
+  tiny: .3em 1em,
+  small: .65em 1.3em,
+  large: 1em 1.95em,
+) !default;
+
+
+// alert
+// -----------------------------------------------------------------------------
+$alertDefaultPadding: 8px 48px 8px 16px !default;
+$alertBorderRadius: 4px !default;
+$alertBaseFontSize: 14px !default;
+$alertMarginBottom: 10px !default;
+$alertColors: (
+  success: $green,
+  danger: $red,
+  warning: $yellow
+) !default;
+
+
+// table
+// -----------------------------------------------------------------------------
+$tableTheadColor: #cecece !default;
+$tableBoderColor: #ccc !default;
+$tableHoverColor: #eaeaea !default;
+$tableSizeDef: 16px 8px !default;
+$tableSizeTiny: 8px !default;
+$tableTransitionTime: .3s !default;
+
+
+// checkbox
+// -----------------------------------------------------------------------------
+$checkboxSize: 14px !default;            // checkbox 尺寸
+$checkboxBRPX: 2px !default;             // checkbox 圆角尺寸
+$checkboxBorderColor: #9e9e9e !default;  // checkbox 边框颜色
+
+$checkedColor: $primary !default;        // 默认选中颜色
+$checkboxTextColor: #666 !default;       // 默认文本颜色
+$checkboxTextPadding: 8px !default;      // 文本左右padding值
+$checkboxTransitionTime: .2s !default;   // 鼠标移入动画时间
+$checkboxIconWidth: 5px !default;        // 选中图标的宽度
+$checkboxIconHeight: 8px !default;       // 选中图标的高度
+
+// checkbox 选中颜色
+$checkboxColors: (
+  success: $green,
+  danger: $red,
+  warning: $yellow
+) !default;
+
+
+// radio
+// -----------------------------------------------------------------------------
+$radioSize: 14px !default;            // radio 尺寸
+$radioBRPX: 7px !default;             // radio 圆角尺寸
+$radioBorderColor: #9e9e9e !default;  // radio 边框颜色
+
+$radioCheckedColor: $primary !default;// 默认选中颜色
+$radioTextColor: #666 !default;       // 默认文本颜色
+$radioTextPadding: 8px !default;      // 文本左右padding值
+$radioTransitionTime: .2s !default;   // 鼠标移入动画时间
+$radioIconMargin: 3px !default;      // 外边距
+
+// radio 选中颜色
+$radioColors: (
+  success: $green,
+  danger: $red,
+  warning: $yellow
+) !default;
+
+
+// input
+// -----------------------------------------------------------------------------
+$inputHeight: 40px !default;
+$inputFontSize: 16px !default;
+$inputPadding: 0 8px !default;
+$inputBorderColor: $gray !default;
+$inputTextColor: $grayDark !default;
+$inputTextIndent: 90px !default;
+$inputFocusColor: $primary !default;
+$inputTransitionTime: .2s !default;
+
+
+// label
+// -----------------------------------------------------------------------------
+$labelBorderRadius: 2px !default;
+$labelDefaultSize: .333em .96em !default;
+$labelDefaultFontSize: .9 !default;
+$labelColors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $blue,
+  danger: $red,
+  warning: $yellow
+) !default;
+$labelSize: (
+  tiny: .2121em .65em,
+  large: .45454em 1.35em
+) !default;
+
+// progress
+// -----------------------------------------------------------------------------
+$progressHeight: 16px !default;
+$progressBorderRadius: $progressHeight / 2 !default;
+$progressBGC: #f7f7f7 !default;
+$progressSize: (
+  tiny: 8,
+  large: 22
+) !default;
+$progressColor: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $blue,
+  danger: $red,
+  warning: $yellow
+) !default;

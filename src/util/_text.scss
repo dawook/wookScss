@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* text
+  =========================================================================== */
+
+// text color
+@each $k, $v in $textColor {
+  .#{$nameSpace}text--#{$k} {
+    color: $v;
+  }
+}
+
+.fwb {
+  font-weight: bold;
+}
+.fwn {
+  font-weight: normal !important;
+}
+.ti-null {
+  text-indent: 0;
+}
+.ti-2 {
+  text-indent: 2em;
+}
+.td-unl {
+  text-decoration: underline;
+}
+.td-none {
+  text-decoration: none;
+}
+.word-wrap {
+  word-wrap: break-word;
+  word-break: normal;
+}
+.word-no-wrap {
+  @include ellipsis;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}

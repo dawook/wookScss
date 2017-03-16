@@ -1,0 +1,68 @@
+@charset "UTF-8";
+//
+// font
+// -----------------------------------------------------------------------------
+//
+
+// ##
+// 设置字体大小 rem版
+@mixin font-size-rem($fontSize: $baseFontSize, $inputRem: false) {
+
+  $px: 0;
+  $rem: 0;
+
+  @if $inputRem {
+
+    $px: parseInt($fontSize) * parseInt($baseFontSize) * 1px;
+    $rem: parseInt($fontSize) * 1rem;
+
+  } @else {
+
+    $coe: 1;
+
+    @if isZero($fontSize) == 1 {
+      $coe: 1px;
+    }
+
+    $px: parseInt($fontSize) * $coe;
+    $rem: px2rem($fontSize);
+
+  }
+
+  font-size: $px;
+  font-size: $rem;
+}
+
+// ##
+// 设置字体大小 em版
+@mixin font-size-em($fontSize, $contextFontSize: $baseFontSize) {
+  $coe: 1;
+
+  @if isZero($fontSize) == 1 {
+    $coe: 1px;
+  }
+
+  font-size: parseInt($fontSize) * $coe;
+  font-size: px2em($fontSize, $contextFontSize);
+}
+
+
+// ##
+// 设置字体
+@mixin font-family($type: base) {
+  $fontFamily: $baseFontFamily;
+
+  @if $type == head {
+    $fontFamily: $headFontFamily;
+  }
+
+  @if $type == code {
+    $fontFamily: $codeFontFamily;
+  }
+
+  @if $type == form {
+    $fontFamily: $formFontFamily;
+  }
+
+  font-family: $fontFamily;
+}

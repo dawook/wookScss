@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* progress
+  =========================================================================== */
+
+// progress style
+%progress {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: parseInt($progressHeight) * 1px;
+
+  border-radius: parseInt($progressBorderRadius) * 1px;
+  background-color: $progressBGC;
+  overflow: hidden;
+}
+
+.#{$nameSpace}progress {
+  @extend %progress;
+}
+
+// progress-bar
+%progress-bar {
+  display: block;
+  float: left;
+  height: 100%;
+  border-radius: parseInt($progressBorderRadius) * 1px;
+  color: #fff;
+  text-align: center;
+  line-height: parseInt($progressHeight) * 1px;
+}
+
+.#{$nameSpace}progress__bar {
+  @extend %progress-bar;
+}
+
+// progress size
+@each $key, $val in $progressSize {
+  .#{$nameSpace}progress--#{$key} {
+    height: parseInt($val) * 1px;
+    border-radius: parseInt($val) / 2 * 1px;
+
+    .#{$nameSpace}progress__bar {
+      line-height: parseInt($val) * 1px;
+    }
+  }
+}
+
+// progress size
+@each $key, $val in $progressColor {
+  .#{$nameSpace}progress--#{$key} {
+
+    .#{$nameSpace}progress__bar {
+      background-color: $val;
+    }
+
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "wook-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wook.scss",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scss"
+  ],
+  "author": "yaoxu <wook.yao@foxmail.com>",
+  "license": "MIT"
+}

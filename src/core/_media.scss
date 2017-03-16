@@ -1,0 +1,20 @@
+@charset "UTF-8";
+//
+// 媒体查询
+//-----------------------------------------------------
+//
+@mixin max-screen($maxPixel) {
+  @media only screen and (max-width: $maxPixel) {
+    @content;
+  }
+}
+@mixin min-screen($minPixel) {
+  @media only screen and (min-width: $minPixel) {
+    @content;
+  }
+}
+@mixin screen($minPixel,$maxPixel) {
+  @media only screen and (min-width: $minPixel) and (max-width: $maxPixel) {
+    @content;
+  }
+}

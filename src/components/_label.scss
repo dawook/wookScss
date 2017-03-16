@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/* label
+  =========================================================================== */
+
+// label basic style
+%label {
+  @include inline-block;
+
+  padding: $labelDefaultSize;
+  @include font-size-rem($labelDefaultFontSize, true);
+
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: default;
+
+  border-radius: parseInt($labelBorderRadius) * 1px;
+
+  background-color: $gray;
+  color: $grayDarker;
+}
+
+.#{$nameSpace}label {
+  @extend %label;
+}
+
+// label colors
+@each $key, $val in $labelColors {
+  .#{$nameSpace}label--#{$key} {
+    background-color: lighten($val, 10%);
+    color: #fff;
+  }
+}
+
+// label size
+@each $key, $val in $labelSize {
+  .#{$nameSpace}label--#{$key} {
+    padding: $val;
+  }
+}
+
+// disabled
+%label-disabled {
+  cursor: not-allowed;
+  background-color: lighten($gray, 10%);
+  color: #999;
+}
+
+.#{$nameSpace}label--disabled {
+  @extend %label-disabled;
+}

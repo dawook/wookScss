@@ -1,0 +1,71 @@
+@charset "UTF-8";
+//
+// block
+// -----------------------------------------------------------------------------
+//
+
+// ##
+// 行内样式
+@mixin inline-block() {
+  display: inline-block;
+
+  @if $isSupportOldIE {
+    *display: inline;
+    *zoom: 1;
+  }
+
+}
+
+// ##
+// 清除浮动
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    font: 0/0 a;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  @if $isSupportOldIE {
+    *zoom: 1;
+  }
+}
+
+
+// ##
+// 清除浮动
+@mixin float($direction: left) {
+  float: unquote($direction);
+
+  @if $isSupportOldIE {
+    _display: inline;
+  }
+}
+
+// ##
+// 居中
+@mixin center($direction: both) {
+  position: absolute;
+
+  @if $direction == both {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+
+  } @else if $direction == hor {
+    left: 50%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+
+  } @else if $direction == ver {
+    top: 50%;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+
+  }
+}

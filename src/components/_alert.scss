@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* alert
+  =========================================================================== */
+
+// alert basic style
+%alert {
+  position: relative;
+  padding: $alertDefaultPadding;
+  border-radius: parseInt($alertBorderRadius) * 1px;
+  color: #666;
+  font-size: parseInt($alertBaseFontSize) * 1px;
+  line-height: 16px;
+  border: 1px solid transparent;
+  margin-bottom: parseInt($alertMarginBottom) * 1px;
+}
+
+.#{$nameSpace}alert {
+  @extend %alert;
+}
+
+// alert colors
+@each $key,$val in $alertColors {
+  .#{$nameSpace}alert--#{$key} {
+    background-color: lighten($val, 25%);
+    border-color: lighten($val, 5%);
+  }
+}

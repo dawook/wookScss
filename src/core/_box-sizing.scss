@@ -1,0 +1,8 @@
+@charset "UTF-8";
+//
+// box-sizing
+// -----------------------------------------------------------------------------
+//
+@mixin box-sizing($boxModel: border-box) {
+  @include setPrefixer( (box-sizing: $boxModel) );
+}

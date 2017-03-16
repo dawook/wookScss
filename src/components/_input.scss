@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* input
+  =========================================================================== */
+
+// input group
+.#{$nameSpace}input-group {
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+
+}
+
+
+// input basic style
+%form-control {
+  display: block;
+  padding: $inputPadding;
+
+  width: 100%;
+  @include center-line($inputHeight, true);
+  font-size: parseInt($inputFontSize) * 1px;
+  color: $inputTextColor;
+
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: 1px solid $inputBorderColor;
+  outline: none;
+
+  @include transition(all $inputTransitionTime cubic-bezier(.645,.045,.355,1));
+
+  &:focus {
+    border-bottom: 1px solid $inputFocusColor;;
+
+    + .#{$nameSpace}form-label {
+      color: $inputFocusColor;
+
+      + .#{$nameSpace}form-bar {
+        left: 0;
+        width: 100%;
+      }
+    }
+
+
+  }
+}
+
+.#{$nameSpace}form-control {
+  @extend %form-control;
+
+  &.form-control--with-label {
+    padding-left: parseInt($inputTextIndent) * 1px + 8px;
+  }
+}
+
+
+// form-label
+%form-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: parseInt($inputTextIndent) * 1px;
+  text-align: right;
+  line-height: parseInt($inputHeight) * 1px;
+
+  color: darken($inputTextColor, 20%);
+
+  font-size: parseInt($inputFontSize) * 1px;
+
+  @include transition(all $inputTransitionTime cubic-bezier(.645,.045,.355,1));
+}
+
+.#{$nameSpace}form-label {
+  @extend %form-label;
+}
+
+
+// form bar
+%form-bar {
+  position: relative;
+  top: -1px;
+  left: 50%;
+  display: block;
+  width: 0;
+  height: 2px;
+
+  background-color: $inputFocusColor;
+
+  @include transition(all $inputTransitionTime cubic-bezier(.645,.045,.355,1));
+}
+
+.#{$nameSpace}form-bar {
+  @extend %form-bar;
+}

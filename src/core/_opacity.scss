@@ -1,0 +1,9 @@
+@charset "UTF-8";
+//
+// opacity
+// -----------------------------------------------------------------------------
+//
+@mixin opacity( $opacity: 1 ) {
+  opacity: $opacity;
+  filter: Alpha(opacity = $opacity * 100);
+}

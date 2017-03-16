@@ -1,0 +1,56 @@
+@charset "UTF-8";
+//
+// functions
+// -----------------------------------------------------------------------------
+//
+
+// @desc 去除数据的单位
+@function parseInt($args) {
+  @return $args / ($args * 0 + 1);
+}
+
+// @desc 是否为零
+@function isZero($args) {
+  $number: parseInt($args);
+  $res: 0;
+
+  @if $number != 0 {
+    $res: 1;
+  }
+
+  @return $res;
+}
+
+// @desc px转为rem
+@function px2rem($pixel) {
+  $res: 0;
+
+  @if isZero($pixel) == 1 {
+    $res: parseInt($pixel) / parseInt($baseFontSize) * 1rem;
+  }
+
+  @return $res;
+}
+
+// @desc px转为em
+@function px2em($pixel, $contextPixel) {
+  $res: 0;
+
+  @if isZero($pixel) == 1 {
+    $res: parseInt($pixel) / parseInt($contextPixel) * 1em;
+  }
+
+  @return $res;
+}
+
+
+// @desc 获取列表第一个
+@function first($list) {
+  @return nth($list, 1);
+}
+
+
+// @desc 获取列表最后一个
+@function last($list) {
+    @return nth($list, length($list));
+}

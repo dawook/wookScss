@@ -1,0 +1,30 @@
+@charset "UTF-8";
+//
+// mixins
+// -----------------------------------------------------------------------------
+//
+// ### Usage
+// Provide the core of the method
+//
+
+@import 'config';
+
+@import 'functions';
+
+@import 'prefix';
+@import 'box-sizing';
+
+@import 'font';
+@import 'text';
+@import 'block';
+@import 'placeholder';
+@import 'opacity';
+
+@import 'triangle';
+@import 'animation';
+@import 'gradient';
+@import 'media';
+
+@import 'normalize';
+
+

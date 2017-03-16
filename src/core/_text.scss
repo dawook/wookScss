@@ -1,0 +1,54 @@
+@charset "UTF-8";
+//
+// text
+// -----------------------------------------------------------------------------
+//
+
+// ##
+// 隐藏文字
+@mixin hide-text() {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-align: left;
+}
+
+// 省略号样式
+@mixin ellipsis($line-number: 1) {
+  overflow: hidden;
+
+  @if $line-number == 1 {
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+      -webkit-line-clamp: $line-number;
+      -webkit-box-orient: vertical;
+  }
+}
+
+// ##
+// 强制换行
+@mixin fore-wrap() {
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+}
+
+// ##
+// 单行文本居中
+@mixin center-line($height, $isInput: false) {
+  height: parseInt($height) * 1px;
+  @if $isInput {
+    line-height: parseInt($height) * 1px\0;
+  }
+  @else {
+    line-height: parseInt($height) * 1px;
+  }
+
+}

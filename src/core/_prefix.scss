@@ -1,0 +1,15 @@
+@charset "UTF-8";
+//
+// prefix
+// -----------------------------------------------------------------------------
+//
+@mixin setPrefixer($args, $prefix: $prefixList) {
+  @each $key, $val in $args {
+    @if $prefix and $isUseAutoprefixer {
+      @each $prefixVal in $prefix {
+        #{'-' + $prefixVal + '-' + $key}: #{$val};
+      }
+    }
+    #{$key}: #{$val};
+  }
+}

@@ -1,0 +1,221 @@
+@charset "UTF-8";
+/* checkbox
+  =========================================================================== */
+
+// disabled
+%checkbox-disabled {
+  color: lighten($checkboxTextColor, 30%);
+
+  cursor: not-allowed;
+}
+%checkbox-disabled-icon {
+  border-color: lighten($checkboxBorderColor, 10%);
+  background-color: lighten($checkboxBorderColor, 30%);
+}
+
+// checkbox basic style
+%checkbox {
+  @include inline-block;
+  position: relative;
+  margin-bottom: 0;
+
+  vertical-align: middle;
+  min-height: parseInt($checkboxSize) * 1px + 2px;
+  line-height: 30px;
+  color: $checkboxTextColor;
+  font-size: inherit;
+
+  padding-left: parseInt($checkboxSize) * 1px + 2px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  & > input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include opacity(0);
+  }
+}
+
+.#{$nameSpace}checkbox {
+  @extend %checkbox;
+
+  &:hover {
+    .#{$nameSpace}checkbox__inner {
+      border-color: $checkedColor;
+    }
+  }
+
+  // disabled
+  &.#{$nameSpace}checkbox--disabled {
+    @extend %checkbox-disabled;
+
+    &:hover {
+      .#{$nameSpace}checkbox__inner {
+        @extend %checkbox-disabled-icon;
+      }
+    }
+
+    .#{$nameSpace}checkbox__inner {
+      @extend %checkbox-disabled-icon;
+    }
+  }
+
+}
+
+// checkbox inner
+%inner {
+  @include transition(all $checkboxTransitionTime cubic-bezier(.645,.045,.355,1));
+
+  @include inline-block;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  margin-top: -.5em;
+
+  width: parseInt($checkboxSize) * 1px;
+  height: parseInt($checkboxSize) * 1px;
+
+  border-radius: parseInt($checkboxBRPX) * 1px;
+  border: 1px solid $checkboxBorderColor;
+}
+
+.#{$nameSpace}checkbox__inner {
+  @extend %inner;
+}
+
+// checkbox text
+%text {
+  padding-right: parseInt($checkboxTextPadding) * 1px;
+  padding-left: parseInt($checkboxTextPadding) * 1px;
+}
+
+.#{$nameSpace}checkbox__text {
+  @extend %text;
+}
+
+// checkbox checked
+%chechked {
+  color: $checkedColor;
+}
+
+%chechked-icon {
+
+  @include transform(rotate(45deg) scale(1));
+
+  position: absolute;
+  top: 1px;
+  left: 4px;
+
+  display: table;
+  width: parseInt($checkboxIconWidth) * 1px;
+  height: parseInt($checkboxIconHeight) * 1px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+}
+
+.#{$nameSpace}checkbox--checked {
+  @extend %chechked;
+
+  .#{$nameSpace}checkbox__inner {
+    border-color: $checkedColor;
+    background-color: $checkedColor;
+
+    &::after {
+      content: "";
+      @extend %chechked-icon;
+    }
+  }
+
+  // disabled
+  &.#{$nameSpace}checkbox--disabled {
+    @extend %checkbox-disabled;
+    &:hover {
+      .#{$nameSpace}checkbox__inner {
+        @extend %checkbox-disabled-icon;
+      }
+    }
+    .#{$nameSpace}checkbox__inner {
+      @extend %checkbox-disabled-icon;
+
+    }
+  }
+
+}
+
+// checkbox group
+%checkbox-group {
+  display: block;
+  font-style: 12px;
+}
+
+.#{$nameSpace}checkbox__group {
+  @extend %checkbox-group;
+}
+
+// checkbox to block
+%checkbox-block {
+  display: block;
+}
+
+.#{$nameSpace}checkbox--block {
+  @extend %checkbox-block;
+}
+
+// checkbox color
+@each $key,$val in $checkboxColors {
+  .#{$nameSpace}checkbox--#{$key} {
+
+    &:hover {
+      .#{$nameSpace}checkbox__inner {
+        border-color: $val;
+      }
+    }
+
+    &.#{$nameSpace}checkbox--checked {
+      color: $val;
+
+      .#{$nameSpace}checkbox__inner {
+        border-color: $val;
+        background-color: $val;
+      }
+
+      // disabled
+      &.#{$nameSpace}checkbox--disabled {
+        @extend %checkbox-disabled;
+
+        &:hover {
+          .#{$nameSpace}checkbox__inner {
+            @extend %checkbox-disabled-icon;
+          }
+        }
+
+        .#{$nameSpace}checkbox__inner {
+          @extend %checkbox-disabled-icon;
+        }
+      }
+
+    }
+
+    // disabled
+    &.#{$nameSpace}checkbox--disabled {
+      @extend %checkbox-disabled;
+
+      &:hover {
+        .#{$nameSpace}checkbox__inner {
+          @extend %checkbox-disabled-icon;
+        }
+      }
+
+      .#{$nameSpace}checkbox__inner {
+        @extend %checkbox-disabled-icon;
+      }
+    }
+
+  }
+}

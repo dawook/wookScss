@@ -1,0 +1,26 @@
+@charset "UTF-8";
+//
+// placeholder
+// -----------------------------------------------------------------------------
+//
+@mixin placeholder( $color: $placeholderColor ) {
+
+  @if $isUseAutoprefixer {
+    &::-webkit-input-placeholder {
+      color: $color;
+    }
+    &:-moz-placeholder {
+      color: $color;
+    }
+    &::-moz-placeholder {
+      color: $color;
+    }
+    &:-ms-input-placeholder {
+      color: $color;
+    }
+  } @else {
+    &::placeholder {
+      color: $color;
+    }
+  }
+}
