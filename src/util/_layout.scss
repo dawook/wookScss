@@ -1,0 +1,137 @@
+@charset "UTF-8";
+/* layout
+  =========================================================================== */
+
+// padding
+@each $k, $v in $layoutPaddingMap {
+  .p--#{$k} {
+    @if $v == 0 {
+      padding: 0 !important;
+    } @else {
+      padding: parseInt($v) * 1px;
+    }
+
+  }
+}
+
+// padding top
+@each $k, $v in $layoutPaddingMap {
+  .p-t--#{$k} {
+    @if $v == 0 {
+      padding-top: 0 !important;
+    } @else {
+      padding-top: parseInt($v) * 1px;
+    }
+  }
+}
+
+// padding right
+@each $k, $v in $layoutPaddingMap {
+  .p-r--#{$k} {
+    @if $v == 0 {
+      padding-right: 0 !important;
+    } @else {
+      padding-right: parseInt($v) * 1px;
+    }
+  }
+}
+
+// padding bottom
+@each $k, $v in $layoutPaddingMap {
+  .p-b--#{$k} {
+    @if $v == 0 {
+      padding-bottom: 0 !important;
+    } @else {
+      padding-bottom: parseInt($v) * 1px;
+    }
+  }
+}
+
+// padding left
+@each $k, $v in $layoutPaddingMap {
+  .p-l--#{$k} {
+    @if $v == 0 {
+      padding-left: 0 !important;
+    } @else {
+      padding-left: parseInt($v) * 1px;
+    }
+  }
+}
+
+
+// margin
+@each $k, $v in $layoutMarginMap {
+  .m--#{$k} {
+    @if $v == 0 {
+      margin: 0 !important;
+    } @else {
+      margin: parseInt($v) * 1px;
+    }
+
+  }
+}
+
+// margin top
+@each $k, $v in $layoutMarginMap {
+  .m-t--#{$k} {
+    @if $v == 0 {
+      margin-top: 0 !important;
+    } @else {
+      margin-top: parseInt($v) * 1px;
+    }
+  }
+}
+
+// margin right
+@each $k, $v in $layoutMarginMap {
+  .m-r--#{$k} {
+    @if $v == 0 {
+      margin-right: 0 !important;
+    } @else {
+      margin-right: parseInt($v) * 1px;
+    }
+  }
+}
+
+// margin bottom
+@each $k, $v in $layoutMarginMap {
+  .m-b--#{$k} {
+    @if $v == 0 {
+      margin-bottom: 0 !important;
+    } @else {
+      margin-bottom: parseInt($v) * 1px;
+    }
+  }
+}
+
+// margin left
+@each $k, $v in $layoutMarginMap {
+  .m-l--#{$k} {
+    @if $v == 0 {
+      margin-left: 0 !important;
+    } @else {
+      margin-left: parseInt($v) * 1px;
+    }
+  }
+}
+
+// layout
+%center {
+  margin-right: auto;
+  margin-left: auto;
+}
+.g-full {
+  width: 100%;
+  min-width: parseInt($layoutWidth) * 1px;
+  overflow: hidden;
+}
+
+.g-#{$layoutWidth} {
+  @extend %center;
+  width: parseInt($layoutWidth) * 1px;
+  overflow: hidden;
+}
+
+.g-center {
+  @extend %center;
+}

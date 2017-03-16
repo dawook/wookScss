@@ -28,3 +28,28 @@ $fontSizeMap: (
   xlarge: 22
 ) !default;
 
+// layout
+// -----------------------------------------------------------------------------
+$layoutPaddingMap: (
+  none: 0,
+  xxs: 5,
+  xs: 10,
+  sm: 15,
+  md: 20,
+  lg: 30,
+  xl: 40,
+  xxl: 50
+) !default;
+
+$layoutMarginMap: (
+  none: 0,
+  xxs: 5,
+  xs: 10,
+  sm: 15,
+  md: 20,
+  lg: 30,
+  xl: 40,
+  xxl: 50
+) !default;
+
+$layoutWidth: 1200px;
